@@ -1,4 +1,19 @@
+import {HexagonGallery} from "../components/ImageGallary";
+
 const LadingPage = () => {
+  const imagesArray: string[] = [
+    "./images/founder.png",
+    "./images/founder.png",
+    "./images/founder.png",
+    "./images/founder.png",
+    "./images/hero.png",
+    "./images/hero.png",
+    "./images/hero.png",
+    "./images/hero.png",
+    "./images/hero.png",
+    "./images/logo.png",
+  ];
+
   return (
     <main className="min-h-[calc(100vh-70px)] overflow-hidden bg-(--surface) text-(--on_surface)">
       <div className="relative isolate">
@@ -130,7 +145,21 @@ const LadingPage = () => {
         </div>
       </section>
 
-      <section></section>
+      <section
+        id="classrooms"
+        className="w-screen min-h-screen overflow-hidden bg-black"
+      >
+        <div className="px-6 pt-8 sm:px-10 lg:px-14">
+          <p className="text-center font-serif text-4xl capitalize text-(--primary) sm:text-5xl">
+            the class room
+          </p>
+        </div>
+        <div className="  mx-auto mt-8 flex w-full max-w-5xl justify-center px-4 pb-10 sm:px-6 lg:px-8">
+          <div className="w-full h-[80vh]  flex items-center justify-center">
+            <HexagonGallery imageArray={imagesArray} />
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
