@@ -1,1 +1,18 @@
 @import "tailwindcss";
+@import "./theme.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: var(--on_surface);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+ display: none;
+}
