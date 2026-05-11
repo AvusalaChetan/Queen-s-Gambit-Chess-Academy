@@ -192,6 +192,7 @@ export const HexagonGallery = ({ imageArray }: HexagonGalleryProps) => {
         justifyContent: "center",
         padding: 24,
       }}
+      className="lg:ml-12 ml-0"
     >
       <div
         style={{
@@ -200,6 +201,7 @@ export const HexagonGallery = ({ imageArray }: HexagonGalleryProps) => {
           height: frameHeight,
           filter: "drop-shadow(0 20px 60px rgba(0,0,0,0.8))",
         }}
+
       >
         {hexagons.map((hex) => (
           <HexagonCell

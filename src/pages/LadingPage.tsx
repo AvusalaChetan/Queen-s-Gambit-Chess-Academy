@@ -15,7 +15,7 @@ const LadingPage = () => {
     "./images/logo.png",
   ];
 
-  const myMail: string = "avusalachetan@gmail.com";
+  const myMail: string = "";
 
   return (
     <main className="min-h-[calc(100vh-70px)] overflow-hidden bg-(--surface) text-(--on_surface)">
