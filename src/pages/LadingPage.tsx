@@ -15,7 +15,10 @@ const LadingPage = () => {
     "./images/logo.png",
   ];
 
-  const myMail: string = "";
+ const myMail = import.meta.env.VITE_CONTACT_EMAIL
+ if(!myMail){
+  return<>no email exist</>
+ }
 
   return (
     <main className="min-h-[calc(100vh-70px)] overflow-hidden bg-(--surface) text-(--on_surface)">
@@ -344,74 +347,9 @@ const LadingPage = () => {
                 </select>
               </div>
 
-              {/* Program Interest */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                  PROGRAM INTEREST
-                </label>
-                <select
-                  name="program"
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white appearance-none focus:outline-none focus:border-white/30"
-                  style={{
-                    backgroundImage:
-                      'url(\'data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>\')',
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 12px center",
-                    backgroundSize: "24px",
-                    paddingRight: "40px",
-                  }}
-                >
-                  <option value="">Select a Program</option>
-                  <option value="Junior Champions">
-                    Junior Champions (Ages 5–10)
-                  </option>
-                  <option value="Youth Masterclass">
-                    Youth Masterclass (Ages 11–17)
-                  </option>
-                  <option value="Adult Improver">Adult Improver (18+)</option>
-                  <option value="1-on-1 Private Coaching">
-                    1-on-1 Private Coaching
-                  </option>
-                  <option value="Weekend Batch">
-                    Weekend Batch (Beginner)
-                  </option>
-                </select>
-              </div>
-
-              {/* Preferred Mode */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                  PREFERRED MODE
-                </label>
-                <div className="flex gap-4">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="preferredMode"
-                      value="Online"
-                      defaultChecked
-                      className="w-4 h-4 cursor-pointer"
-                    />
-                    <span className="text-white/80 text-sm">Online</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="preferredMode"
-                      value="At Academy"
-                      className="w-4 h-4 cursor-pointer"
-                    />
-                    <span className="text-white/80 text-sm">At Academy</span>
-                  </label>
-                </div>
-              </div>
-
               {/* FormSubmit hidden fields */}
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value={window.location.href} />
-
-              {/* Submit */}
               <button
                 type="submit"
                 className="w-full btn-queen py-3 px-4 font-bold uppercase tracking-wide text-sm rounded transition-all hover:scale-105 duration-300 mt-4"
