@@ -1,4 +1,5 @@
 import {HexagonGallery} from "../components/ImageGallary";
+import {IoLocationSharp, IoCall} from "react-icons/io5";
 
 const LadingPage = () => {
   const imagesArray: string[] = [
@@ -9,10 +10,12 @@ const LadingPage = () => {
     "./images/hero.png",
     "./images/hero.png",
     "./images/hero.png",
-    "./images/hero.png",
-    "./images/hero.png",
+    "./images/logo.png",
+    "./images/logo.png",
     "./images/logo.png",
   ];
+
+  const myMail: string = "avusalachetan@gmail.com";
 
   return (
     <main className="min-h-[calc(100vh-70px)] overflow-hidden bg-(--surface) text-(--on_surface)">
@@ -40,10 +43,14 @@ const LadingPage = () => {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
-                Elite strategy, computational precision, and the weight of
-                tradition. Elevate your tactical awareness with world-class
-                grandmaster coaching.
+              <p className="mt-8 max-w-2xl text-white/82 lg:text-xs text-xs ">
+                Queen's Gambit Chess Academy is a professional chess training
+                academy for kids and young learners, located near Kothapet. We
+                provide structured coaching from beginner to intermediate level
+                with focus on strategy, tactics, concentration, memory, and
+                tournament preparation. Our goal is to develop confident and
+                competitive chess players through expert guidance, disciplined
+                practice, and a friendly learning environment.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -160,6 +167,262 @@ const LadingPage = () => {
           </div>
         </div>
       </section>
+
+      <section
+        id="booktrial"
+        className="px-4 sm:px-10 lg:px-14 py-20 bg-[var(--surface)]"
+      >
+        <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-12">
+          {/* Left Side */}
+          <div className="flex flex-col justify-center">
+            <h3 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4">
+              Begin Your <br />
+              <span className="text-(--primary)">Grandmaster Journey</span>
+            </h3>
+            <p className="text-sm text-amber-100 mb-8 leading-relaxed">
+              Whether you're looking to master the basics or refine elite-level
+              tactics, we have a seat at the table for you.
+            </p>
+
+            <div className="space-y-8">
+              <div>
+                <div className="flex items-start gap-3 mb-3">
+                  <IoLocationSharp className="text-5xl text-(--primary)" />
+                  <div>
+                    <p className="uppercase text-xs font-semibold text-white/60 mb-1">
+                      Our Studio
+                    </p>
+                    <p className="text-white/80">
+                      1-5-65/6/1, Rd No. 2, Phanigiri Colony, Kothapet,
+                      Hyderabad, Telangana 500060, India
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-start gap-3">
+                  <IoCall className="text-2xl text-(--primary)" />
+                  <div>
+                    <p className="uppercase text-xs font-semibold text-white/60 mb-2">
+                      Contact
+                    </p>
+                    <ul className="space-y-2 text-white/80">
+                      <li>
+                        <a
+                          href="mailto:academy@grandmastereditor.com"
+                          className="text-(--primary) hover:underline"
+                        >
+                          academy@grandmastereditor.com
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="tel:+919392309108"
+                          className="text-(--primary) hover:underline"
+                        >
+                          +91 9392309108
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Form */}
+          <div className="bg-black/40 rounded-lg p-8 border border-white/10">
+            <form
+              action={`https://formsubmit.co/${myMail}`}
+              method="POST"
+              className="space-y-6"
+            >
+              {/* Full Name */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                  FULL NAME
+                </label>
+                <input
+                  type="text"
+                  name="fullName"
+                  required
+                  placeholder="Emanuel Lasker"
+                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
+                />
+              </div>
+
+              {/* Email & Phone */}
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                    EMAIL
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="lasker@chess.com"
+                    className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                    PHONE
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    placeholder="+1 (234) 567-890"
+                    className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
+                  />
+                </div>
+              </div>
+
+              {/* WhatsApp Number */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                  WHATSAPP NUMBER
+                </label>
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  required
+                  placeholder="+1 (234) 567-8900"
+                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
+                />
+              </div>
+
+              {/* Student Age */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                  STUDENT AGE
+                </label>
+                <input
+                  type="number"
+                  name="studentAge"
+                  required
+                  placeholder="e.g., 12"
+                  min="5"
+                  max="100"
+                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
+                />
+              </div>
+
+              {/* Skill Level */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                  CURRENT SKILL LEVEL
+                </label>
+                <select
+                  name="skillLevel"
+                  required
+                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white appearance-none focus:outline-none focus:border-white/30"
+                  style={{
+                    backgroundImage:
+                      'url(\'data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>\')',
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 12px center",
+                    backgroundSize: "24px",
+                    paddingRight: "40px",
+                  }}
+                >
+                  <option value="">Select Skill Level</option>
+                  <option value="Absolute Beginner">
+                    Absolute Beginner (Doesn't know how pieces move)
+                  </option>
+                  <option value="Beginner">
+                    Beginner (Knows the rules but no strategy)
+                  </option>
+                  <option value="Intermediate">
+                    Intermediate (Plays online/knows basic tactics)
+                  </option>
+                  <option value="Advanced">
+                    Advanced (Has a rating or plays in tournaments)
+                  </option>
+                </select>
+              </div>
+
+              {/* Program Interest */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                  PROGRAM INTEREST
+                </label>
+                <select
+                  name="program"
+                  required
+                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white appearance-none focus:outline-none focus:border-white/30"
+                  style={{
+                    backgroundImage:
+                      'url(\'data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>\')',
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 12px center",
+                    backgroundSize: "24px",
+                    paddingRight: "40px",
+                  }}
+                >
+                  <option value="">Select a Program</option>
+                  <option value="Junior Champions">
+                    Junior Champions (Ages 5–10)
+                  </option>
+                  <option value="Youth Masterclass">
+                    Youth Masterclass (Ages 11–17)
+                  </option>
+                  <option value="Adult Improver">Adult Improver (18+)</option>
+                  <option value="1-on-1 Private Coaching">
+                    1-on-1 Private Coaching
+                  </option>
+                  <option value="Weekend Batch">
+                    Weekend Batch (Beginner)
+                  </option>
+                </select>
+              </div>
+
+              {/* Preferred Mode */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
+                  PREFERRED MODE
+                </label>
+                <div className="flex gap-4">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="preferredMode"
+                      value="Online"
+                      defaultChecked
+                      className="w-4 h-4 cursor-pointer"
+                    />
+                    <span className="text-white/80 text-sm">Online</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="preferredMode"
+                      value="At Academy"
+                      className="w-4 h-4 cursor-pointer"
+                    />
+                    <span className="text-white/80 text-sm">At Academy</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* FormSubmit hidden fields */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={window.location.href} />
+
+              {/* Submit */}
+              <button
+                type="submit"
+                className="w-full btn-queen py-3 px-4 font-bold uppercase tracking-wide text-sm rounded transition-all hover:scale-105 duration-300 mt-4"
+              >
+                JOIN NOW
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer></footer>
     </main>
   );
 };
