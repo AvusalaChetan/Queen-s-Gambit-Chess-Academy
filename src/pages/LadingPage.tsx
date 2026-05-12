@@ -1,5 +1,7 @@
-import {HexagonGallery} from "../components/ImageGallary";
-import {IoLocationSharp, IoCall} from "react-icons/io5";
+import {IoCall, IoLocationSharp} from "react-icons/io5";
+import {ImageGallary} from "../components/ImageGallary";
+import Form from "../components/Form";
+import {FaRupeeSign} from "react-icons/fa";
 
 const LadingPage = () => {
   const imagesArray: string[] = [
@@ -8,17 +10,14 @@ const LadingPage = () => {
     "./images/founder.png",
     "./images/founder.png",
     "./images/hero.png",
-    "./images/hero.png",
-    "./images/hero.png",
-    "./images/logo.png",
     "./images/logo.png",
     "./images/logo.png",
   ];
 
- const myMail = import.meta.env.VITE_CONTACT_EMAIL
- if(!myMail){
-  return<>no email exist</>
- }
+  const myMail = import.meta.env.VITE_CONTACT_EMAIL;
+  //  if(!myMail){
+  //   return<>no email exist</>
+  //  }
 
   return (
     <main className="min-h-[calc(100vh-70px)] overflow-hidden bg-(--surface) text-(--on_surface)">
@@ -46,7 +45,7 @@ const LadingPage = () => {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-2xl text-white/82 lg:text-xs text-xs ">
+              <p className="mt-8 max-w-2xl text-white/82 lg:text-xs text-sm ">
                 Queen's Gambit Chess Academy is a professional chess training
                 academy for kids and young learners, located near Kothapet. We
                 provide structured coaching from beginner to intermediate level
@@ -56,13 +55,27 @@ const LadingPage = () => {
                 practice, and a friendly learning environment.
               </p>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <button className="btn-queen min-w-55 px-7 py-4 text-sm font-bold shadow-[0_18px_50px_rgba(242,202,80,0.18)] transition-transform duration-300 hover:-translate-y-0.5">
-                  Book a Free Trial Class
-                </button>
-                <button className="btn-knight min-w-55 px-7 py-4 text-sm font-semibold text-white/88 transition-colors duration-300 hover:bg-white/10">
-                  Explore Philosophy
-                </button>
+              <div className="mt-10 grid gap-4 sm:grid-cols-1  lg:w-[50%] p-2">
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-green-300/90">
+                    Open
+                  </p>
+                  <p className="mt-2 text-sm text-white/85">Monday - Sunday</p>
+                  <p className="text-sm text-white/55">9:00 AM - 6:00 PM</p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-red-300/90">
+                    Price
+                  </p>
+                  <div className="mt-2 flex items-baseline gap-2 text-white/85">
+                    <FaRupeeSign className="text-base text-(--primary)" />
+                    <span className="text-2xl font-semibold leading-none">
+                      1200
+                    </span>
+                    <span className="text-sm text-white/55">/ month</span>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -133,7 +146,7 @@ const LadingPage = () => {
             </div>
 
             {/* Stats section */}
-            <div className="flex gap-12 border-t border-white/10 pt-8">
+            {/* <div className="flex gap-12 border-t border-white/10 pt-8">
               <div>
                 <p className="text-4xl font-serif font-normal text-(--primary) sm:text-5xl">
                   10<span className="text-3xl">+</span>
@@ -144,13 +157,13 @@ const LadingPage = () => {
               </div>
               <div>
                 <p className="text-4xl font-serif font-normal text-(--primary) sm:text-5xl">
-                  500<span className="text-3xl">+</span>
+                  <span className="text-3xl">+</span>
                 </p>
                 <p className="mt-2 text-xs uppercase tracking-widest text-white/45">
                   Students Mentored
                 </p>
               </div>
-            </div>
+            </div> */}
           </aside>
         </div>
       </section>
@@ -164,16 +177,16 @@ const LadingPage = () => {
             the class room
           </p>
         </div>
-        <div className="  mx-auto mt-8 flex w-full max-w-5xl justify-center px-4 pb-10 sm:px-6 lg:px-8">
-          <div className="w-full h-[80vh]  flex items-center justify-center">
-            <HexagonGallery imageArray={imagesArray} />
+        <div className="mx-auto mt-8 flex w-full max-w-6xl justify-center px-4 pb-10 sm:px-6 lg:px-8">
+          <div className="max-w-full  ">
+            <ImageGallary imageArray={imagesArray} />
           </div>
         </div>
       </section>
 
       <section
         id="booktrial"
-        className="px-4 sm:px-10 lg:px-14 py-20 bg-[var(--surface)]"
+        className="px-4 sm:px-10 lg:px-14 py-20 bg-(--surface)"
       >
         <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-12">
           {/* Left Side */}
@@ -234,129 +247,8 @@ const LadingPage = () => {
             </div>
           </div>
 
-          {/* Right Side - Form */}
           <div className="bg-black/40 rounded-lg p-8 border border-white/10">
-            <form
-              action={`https://formsubmit.co/${myMail}`}
-              method="POST"
-              className="space-y-6"
-            >
-              {/* Full Name */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                  FULL NAME
-                </label>
-                <input
-                  type="text"
-                  name="fullName"
-                  required
-                  placeholder="Emanuel Lasker"
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
-                />
-              </div>
-
-              {/* Email & Phone */}
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                    EMAIL
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="lasker@chess.com"
-                    className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                    PHONE
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    placeholder="+1 (234) 567-890"
-                    className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
-                  />
-                </div>
-              </div>
-
-              {/* WhatsApp Number */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                  WHATSAPP NUMBER
-                </label>
-                <input
-                  type="tel"
-                  name="whatsapp"
-                  required
-                  placeholder="+1 (234) 567-8900"
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
-                />
-              </div>
-
-              {/* Student Age */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                  STUDENT AGE
-                </label>
-                <input
-                  type="number"
-                  name="studentAge"
-                  required
-                  placeholder="e.g., 12"
-                  min="5"
-                  max="100"
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-white/30"
-                />
-              </div>
-
-              {/* Skill Level */}
-              <div>
-                <label className="block text-xs font-semibold uppercase tracking-wide text-(--primary) mb-3">
-                  CURRENT SKILL LEVEL
-                </label>
-                <select
-                  name="skillLevel"
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white appearance-none focus:outline-none focus:border-white/30"
-                  style={{
-                    backgroundImage:
-                      'url(\'data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>\')',
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 12px center",
-                    backgroundSize: "24px",
-                    paddingRight: "40px",
-                  }}
-                >
-                  <option value="">Select Skill Level</option>
-                  <option value="Absolute Beginner">
-                    Absolute Beginner (Doesn't know how pieces move)
-                  </option>
-                  <option value="Beginner">
-                    Beginner (Knows the rules but no strategy)
-                  </option>
-                  <option value="Intermediate">
-                    Intermediate (Plays online/knows basic tactics)
-                  </option>
-                  <option value="Advanced">
-                    Advanced (Has a rating or plays in tournaments)
-                  </option>
-                </select>
-              </div>
-
-              {/* FormSubmit hidden fields */}
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value={window.location.href} />
-              <button
-                type="submit"
-                className="w-full btn-queen py-3 px-4 font-bold uppercase tracking-wide text-sm rounded transition-all hover:scale-105 duration-300 mt-4"
-              >
-                JOIN NOW
-              </button>
-            </form>
+            <Form myMail={myMail} />
           </div>
         </div>
       </section>
